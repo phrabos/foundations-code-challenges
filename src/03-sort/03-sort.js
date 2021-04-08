@@ -43,7 +43,7 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 export const alphabetizeBetter = (arr) => {
-  // Solution code here...
+    return arr.sort((a, b)=> a.localeCompare(b));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,7 +60,7 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 export const sortByPrice = (arr) => {
-  // Solution code here...
+    return arr.sort((a, b)=> a.price - b.price);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -90,7 +90,7 @@ export class Person {
 }
 
 export const sortPeople = (arr) => {
-  // Solution code here...
+    return arr.sort((a, b)=> a.lastName.localeCompare(b.lastName));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -104,5 +104,9 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 export const sortPeopleBetter = (arr) => {
-  // Solution code here...
+    return arr.sort((a, b)=> {
+        a.lastName.localeCompare(b.lastName);
+        if(a.lastName === b.lastName) a.firstName.localeCompare(b.firstName);
+        if(a.lastName === b.lastName && a.firsName === b.firstName) a.age - b.age;
+    });
 };

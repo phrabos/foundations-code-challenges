@@ -15,7 +15,11 @@ For example, if the input is 'Welcome', the output will be:
 
 export const howMuchPencil = (str) => {
     let result = [];
-    // Solution code here...
+    for(let i = 0; i <= str.length; i++) {
+
+        result.push(str.slice(i, str.length));
+        
+    }
     return result;
 };
 
@@ -28,7 +32,7 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 export const wordsToCharList = (str) => {
-    // Solution code here...
+    return str.split('');
 };
 
 
@@ -46,7 +50,15 @@ Do not use split for this function.
 
 export const listFoods = (recipe) => {
     let result = [];
-    // Solution code here...
+    let subStr = []
+    for(let i = 0; i < recipe.ingredients.length; i++) {
+        const ingredient = recipe.ingredients[i];
+        subStr.push(ingredient.split(' '))
+    }
+    for (let j = 0; j < subStr.length; j++) {
+        const item = subStr[j];
+        result.push(item.slice(2, item.length))
+    }
     return result;
 };
 
