@@ -50,14 +50,14 @@ Do not use split for this function.
 
 export const listFoods = (recipe) => {
     let result = [];
-    let subStr = []
+    let subStr = [];
     for(let i = 0; i < recipe.ingredients.length; i++) {
         const ingredient = recipe.ingredients[i];
-        subStr.push(ingredient.split(' '))
+        subStr.push(ingredient.split(' '));
     }
-    for (let j = 0; j < subStr.length; j++) {
+    for(let j = 0; j < subStr.length; j++) {
         const item = subStr[j];
-        result.push(item.slice(2, item.length))
+        result.push(item.slice(2, item.length));
     }
     return result;
 };
