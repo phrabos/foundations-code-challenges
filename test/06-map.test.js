@@ -8,7 +8,7 @@ import {
     extractStats
 } from '../src/06-map/06-map.js';
 
-const { test, skip } = QUnit;
+const { test } = QUnit;
 
 QUnit.module('06 Array map');
 
