@@ -36,19 +36,19 @@ test('It should return two raised to the power of the integer', assert => {
     assert.deepEqual(forEachTwoToThe([0, 4, 5]), [1, 16, 32]);
 });
 
-skip('It should return decimals if the integer is negative', assert => {
+test('It should return decimals if the integer is negative', assert => {
     assert.deepEqual(forEachTwoToThe([-1, -2, -3]), [0.5, 0.25, 0.125]);
 });
 
-skip('It should return two raised to the power of the integer', assert => {
+test('It should return two raised to the power of the integer', assert => {
     assert.deepEqual(mapTwoToThe([0, 4, 5]), [1, 16, 32]);
 });
 
-skip('It should return decimals if the integer is negative', assert => {
+test('It should return decimals if the integer is negative', assert => {
     assert.deepEqual(mapTwoToThe([-1, -2, -3]), [0.5, 0.25, 0.125]);
 });
 
-skip('It should return an array containing the character code for each letter', assert => {
+test('It should return an array containing the character code for each letter', assert => {
     assert.deepEqual(
         charCode(['C', 'o', 'd', 'e', '3', '0', '1']),
         [67, 111, 100, 101, 51, 48, 49]
