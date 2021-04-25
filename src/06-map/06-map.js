@@ -109,5 +109,10 @@ Here is an example of a single array element: { name: 'speed', total: 35 }
 ------------------------------------------------------------------------------------------------ */
 
 export const extractStats = (arr) => {
-  // Solution code here...
+    return arr.map(s => {
+        return {
+            name: s.stat.name,
+            total: s.effort + s.baseStat
+        };
+    });
 };
