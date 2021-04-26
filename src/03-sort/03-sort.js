@@ -21,7 +21,7 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 export const alphabetize = (arr) => {
-    return arr.sort((a, b) => a - b);
+    return arr.sort();
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -73,6 +73,7 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 
 export const sortNumbersByLength = (arr) => {
   // Solution code here...
+    return arr.sort((a, b) => a.toString().length - b.toString().length);
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -105,8 +106,16 @@ If two people have the same full name, the younger one should come first. Do not
 
 export const sortPeopleBetter = (arr) => {
     return arr.sort((a, b)=> {
-        a.lastName.localeCompare(b.lastName);
-        if(a.lastName === b.lastName) a.firstName.localeCompare(b.firstName);
-        if(a.lastName === b.lastName && a.firsName === b.firstName) a.age - b.age;
+        let keyA = a.lastName + a.firstName + a.age;
+        let keyB = b.lastName + b.firstName + b.age;
+        if(keyA < keyB) return -1;
+        if(keyA > keyB) return 1;
+        return 0;
+
     });
 };
+// return arr.sort((a, b)=> {
+//     a.lastName.localeCompare(b.lastName);
+//     if(a.lastName === b.lastName) a.firstName.localeCompare(b.firstName);
+//     if(a.lastName === b.lastName && a.firsName === b.firstName) a.age - b.age;
+// });

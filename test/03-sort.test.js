@@ -34,7 +34,7 @@ test('It should sort high-to-low the numbers in an array', assert => {
     assert.deepEqual(sortBackwards([1]), [1]);
 });
 
-skip('It should sort strings alphabetically', assert => {
+test('It should sort strings alphabetically', assert => {
     assert.deepEqual(alphabetize(['alphabet', 'Zebra', 'Alphabet', 'carrot']), ['Alphabet', 'Zebra', 'alphabet', 'carrot']);
     assert.deepEqual(alphabetize(['alphabet', 'Alphabet', 'carrot']), ['Alphabet', 'alphabet', 'carrot']);
     assert.deepEqual(alphabetize([]), []);
@@ -71,7 +71,7 @@ test('It should sort items by their price', assert => {
     assert.deepEqual(sortByPrice([]), []);
 });
 
-skip('It should sort numbers by their length', assert => {
+test('It should sort numbers by their length', assert => {
     assert.deepEqual(sortNumbersByLength([10, 2.8, 1, -47.75]), [1, 10, 2.8, -47.75]);
     assert.deepEqual(sortNumbersByLength([100, 2.82, 1, -47.75]), [1, 100, 2.82, -47.75]);
     const sameLength = sortNumbersByLength([1, 2, 3]);
