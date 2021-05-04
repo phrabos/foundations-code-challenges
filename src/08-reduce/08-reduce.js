@@ -26,7 +26,12 @@ eye color:
 
 
 export const eyeColorTally = (arr) => {
-  // Solution code here...
+    const res = arr.reduce((obj, color) =>{
+        const count = obj[color] || 0;
+        return { ...obj, [color]: count + 1 };
+        
+    }, {});
+    return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
