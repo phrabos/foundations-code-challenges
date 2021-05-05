@@ -23,12 +23,24 @@ eye color:
 
 { blue: 1, yellow: 2, red: 1, brown: 1 }
 ------------------------------------------------------------------------------------------------ */
-
+// let result = {};
+// for(let i = 0; i < arr.length; i++){
+//     if(!result[arr[i].eye_color]){
+//         result[arr[i].eye_color] = 1;
+//     } else {
+//         result[arr[i].eye_color] = result[arr[i].eye_color] + 1;
+//     }
+ 
+// }
 
 export const eyeColorTally = (arr) => {
-    const res = arr.reduce((obj, color) =>{
-        const count = obj[color] || 0;
-        return { ...obj, [color]: count + 1 };
+    const res = arr.reduce((result, name)=>{
+        if(!result[name.eye_color]){
+            result[name.eye_color] = 1;
+        } else {
+            result[name.eye_color] = result[name.eye_color] + 1;
+        }
+        return result;
         
     }, {});
     return res;
@@ -45,7 +57,15 @@ eye color:
 ------------------------------------------------------------------------------------------------ */
 
 export const eyeColorNames = (arr) => {
-  // Solution code here...
+    const res = arr.reduce((obj, name)=>{
+        if(!obj[name.eye_color]){
+            obj[name.eye_color] = [name.name];
+        } else {
+            obj[name.eye_color].push(name.name);
+        }
+        return obj;
+    }, {});
+    return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
