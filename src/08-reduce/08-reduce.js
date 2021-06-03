@@ -10,7 +10,7 @@ Note: You may not use the array's built-in length property.
 
 export const countNumberOfElements = (arr) => {
     return arr.reduce((acc, curr) => {
-        return acc + 1;
+        return acc += 1;
     }, 0);
 };
 
@@ -34,16 +34,13 @@ eye color:
 // }
 
 export const eyeColorTally = (arr) => {
-    const res = arr.reduce((result, name)=>{
-        if(!result[name.eye_color]){
-            result[name.eye_color] = 1;
-        } else {
-            result[name.eye_color] = result[name.eye_color] + 1;
-        }
-        return result;
-        
+    return arr.reduce((acc, curr) => {
+        if(!acc[curr.eye_color]){
+            acc[curr.eye_color] = 1;
+        } else acc[curr.eye_color] += 1;
+
+        return acc;
     }, {});
-    return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -53,19 +50,16 @@ Write a function named eyeColorNames that, given the Star Wars data, uses reduce
 object with a key for each eye color and whose value an array of character names having that 
 eye color:
 
-{ blue: 1, yellow: 2, red: 1, brown: 1 }
+{ blue: ["luke skywalker"]}
 ------------------------------------------------------------------------------------------------ */
 
 export const eyeColorNames = (arr) => {
-    const res = arr.reduce((obj, name)=>{
-        if(!obj[name.eye_color]){
-            obj[name.eye_color] = [name.name];
-        } else {
-            obj[name.eye_color].push(name.name);
-        }
-        return obj;
+    return arr.reduce((acc, curr) => {
+        if(!acc[curr.eye_color]){
+            acc[curr.eye_color] = [curr.name];
+        } else acc[curr.eye_color] = [...acc[curr.eye_color], curr.name];
+        return acc;
     }, {});
-    return res;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -100,12 +94,7 @@ You are welcome to use the provided isPrime function.
 ------------------------------------------------------------------------------------------------ */
 
 const isPrime = (value) => {
-    for(let i = 2; i < value; i++) {
-        if(value % i === 0) {
-            return false;
-        }
-    }
-    return value > 1;
+
 };
 
 export const countPrimeNumbers = (arr) => {
