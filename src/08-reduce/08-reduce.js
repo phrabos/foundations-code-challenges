@@ -71,6 +71,12 @@ Write a function named countNumberOfChildren that, given the array of characters
 
 export const countNumberOfChildren = (arr) => {
   // Solution code here...
+    return arr.reduce((acc, curr) => {
+        if(curr.children){
+            acc = acc + curr.children.length;
+        }
+        return acc;
+    }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,7 +88,10 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 export const calculateAverage = (arr) => {
-  // Solution code here...
+    return arr.reduce((acc, curr) => {
+        return acc + curr;
+    // return acc / arr.length;
+    }, 0) / arr.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
