@@ -151,7 +151,7 @@ test('It should return the average of the numbers in the array', assert => {
     assert.equal(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85]), 64);
 });
 
-skip('It should return a count of the prime numbers in the array', assert => {
+test('It should return a count of the prime numbers in the array', assert => {
     assert.equal(countPrimeNumbers([1, 2, 13, 64, 45, 56, 17, 8]), 3);
 });
 

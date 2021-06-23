@@ -108,6 +108,12 @@ const isPrime = (value) => {
 
 export const countPrimeNumbers = (arr) => {
   // Solution code here...
+    return arr.reduce((acc, curr) => {
+        if(curr % 2 !== 0 && curr > 1){
+            acc = acc + 1;
+        }
+        return acc;
+    }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
