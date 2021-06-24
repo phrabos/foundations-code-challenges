@@ -209,4 +209,9 @@ test('It should flatten a 1D array', assert => {
 test('It should flatten a deep nested array', assert => {
     assert.deepEqual(flattenDeepArray([1, 2, [13, [64, 45], 56], 17, 8]), [1, 2, 13, 64, 45, 56, 17, 8]);
 });
-
+test('It should flatten a 1D array', assert => {
+    assert.deepEqual(flattenDeepArray([[1, 2, 13], [64, 45], [56, 17, 8]]), [1, 2, 13, 64, 45, 56, 17, 8]);
+});
+test('It should flatten a 1D array', assert => {
+    assert.deepEqual(flattenDeepArray([[1, [2, [13], 64], 45], [[56], [[17], 8]]]), [1, 2, 13, 64, 45, 56, 17, 8]);
+});

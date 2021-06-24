@@ -154,7 +154,9 @@ export const flattenDeepArray = (arr) => {
     return arr.reduce((acc, curr) => {
         if(Array.isArray(curr)){
             // acc = [...acc, flattenDeepArray(curr)];
-            acc = acc.concat(flattenDeepArray(curr));
+            // acc = acc.concat(flattenDeepArray(curr));
+            const deepNest = flattenDeepArray(curr);
+            acc = [...acc, ...deepNest];
         }
         else acc = [...acc, curr];
         return acc;
