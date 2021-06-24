@@ -143,3 +143,20 @@ Write a function named extractChildren that, given the array of characters from 
 export const extractChildren = (arr) => {
   // Solution code here...
 };
+
+export const flattenArray = (arr) => {
+    return arr.reduce((acc, curr) => {
+        return [...acc, ...curr];
+    });
+};
+
+export const flattenDeepArray = (arr) => {
+    return arr.reduce((acc, curr) => {
+        if(Array.isArray(curr)){
+            // acc = [...acc, flattenDeepArray(curr)];
+            acc = acc.concat(flattenDeepArray(curr));
+        }
+        else acc = [...acc, curr];
+        return acc;
+    }, []);
+};

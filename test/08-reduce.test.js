@@ -6,7 +6,9 @@ import {
     calculateAverage,
     countPrimeNumbers,
     effortStats,
-    extractChildren
+    extractChildren,
+    flattenArray,
+    flattenDeepArray,
 } from '../src/08-reduce/08-reduce.js';
 
 const { test, skip } = QUnit;
@@ -199,3 +201,12 @@ skip('It should return an array containing the names of the children', assert =>
         ['Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Drogon', 'Rhaegal', 'Viserion', 'Margaery', 'Loras']
     );
 });
+
+test('It should flatten a 1D array', assert => {
+    assert.deepEqual(flattenArray([[1, 2, 13], [64, 45], [56, 17, 8]]), [1, 2, 13, 64, 45, 56, 17, 8]);
+});
+
+test('It should flatten a deep nested array', assert => {
+    assert.deepEqual(flattenDeepArray([1, 2, [13, [64, 45], 56], 17, 8]), [1, 2, 13, 64, 45, 56, 17, 8]);
+});
+
