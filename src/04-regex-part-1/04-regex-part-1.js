@@ -13,7 +13,8 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 export const isNum = (input) => {
-  // Solution code here...
+    const regex = /\d/;
+    return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -25,7 +26,7 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 export const isCapitalized = (str) => {
-  // Solution code here...
+	// Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,7 +36,7 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 export const citiesAtoJ = (arr) => {
-  // Solution code here...
+	// Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,7 +52,7 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 export const matchMonth = (input) => {
-  // Solution code here...
+	// Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,8 +65,8 @@ For example, if given the string "Hello, and have a wonderful day!", the word "H
 The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "a ", "wonderful "].
 ------------------------------------------------------------------------------------------------ */
 
-export const noPunctuation = str => {
-  // Solution code here...
+export const noPunctuation = (str) => {
+	// Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,7 +82,7 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
 export const hangman = (str) => {
-  // Solution code here...
+	// Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -97,5 +98,5 @@ Hint: All of these words end with the letters "ells".
 ------------------------------------------------------------------------------------------------ */
 
 export const findShells = (str) => {
-  // Solution code here...
+	// Solution code here...
 };
